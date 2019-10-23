@@ -21,8 +21,10 @@ CREATE TABLE tb_aluno(
 
 );
 
-ALTER TABLE tb_aluno add constraint pk_aluno_id PRIMARY KEY(id);
+ALTER TABLE tb_aluno ADD CONSTRAINT pk_aluno_id PRIMARY KEY(id);
 
-alter table tb_aluno ADD constraint ck_aluno check(sexo in('M','F'));
+ALTER TABLE tb_aluno ADD CONSTRAINT ck_aluno CHECK(sexo IN('M','F'));
 
 ALTER TABLE tb_aluno ADD CONSTRAINT uk_aluno_email UNIQUE (email);
+
+ALTER TABLE tb_aluno ADD CONSTRAINT uk_aluno_cpf UNIQUE (cpf);
