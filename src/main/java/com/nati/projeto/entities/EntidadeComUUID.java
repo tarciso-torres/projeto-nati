@@ -7,10 +7,12 @@ import javax.persistence.MappedSuperclass;
 
 import org.hibernate.annotations.Type;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 @MappedSuperclass
 @Getter
+@EqualsAndHashCode
 public class EntidadeComUUID {
     @Id @Type(type = "pg-uuid")
     private UUID id;
