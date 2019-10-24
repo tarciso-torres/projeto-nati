@@ -30,12 +30,12 @@ public class ProfessorService {
 	}
 
 	public Professor findByCpf(String cpf) {
-		Professor professor = repository.findByCpf(cpf);
+		Professor professor = repository.findByDadosPessoaisCpf(cpf);
 		return professor;
 	}
 
 	public Professor findByEmail(String email) {
-		Professor professor = repository.findByEmail(email);
+		Professor professor = repository.findByDadosPessoaisEmail(email);
 		return professor;
 	}
 
@@ -63,6 +63,6 @@ public class ProfessorService {
 	}
 
 	public Professor findByMatricula(String matricula) {
-		return repository.findByMatricula(matricula);
+		return repository.findByDadosPessoaisMatricula(matricula);
 	}
 }
