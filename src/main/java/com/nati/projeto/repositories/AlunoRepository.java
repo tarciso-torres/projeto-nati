@@ -10,10 +10,10 @@ import com.nati.projeto.entities.Aluno;
 @Repository
 public interface AlunoRepository extends JpaRepository<Aluno, UUID>{
 	
-	Aluno findByMatricula(String name);
+	Aluno findByDadosPessoaisMatricula(String name);
 	
-	Aluno findByCpf(String cpf);
+	Aluno findByDadosPessoaisCpf(String cpf);
 	
-	Aluno findByEmail(String email);
+	Aluno findByDadosPessoaisEmail(String email);
 
 }

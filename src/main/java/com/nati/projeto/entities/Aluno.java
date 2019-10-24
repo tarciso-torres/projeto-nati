@@ -24,29 +24,15 @@ import lombok.Setter;
 @NoArgsConstructor @AllArgsConstructor
 public class Aluno extends EntidadeComUUID{
 	
-	@NotBlank(message = "aluno-1")
-	private String nome;
-	private String matricula;
-	
-	@Email(message = "aluno-2") @NotBlank(message = "aluno-3")
-	private String email;
-	
-	@CPF(message = "aluno-4") @NotBlank(message = "aluno-5") @Size(max = 11, min = 11, message = "aluno-6")
-	private String cpf;
-	
-	@NotBlank(message = "aluno-7")
-	@Column(name = "anoadmissao")
-	private String anoAdmissao;
-	
 	@NotBlank(message = "aluno-8")
 	@Column(name = "semestreadmissao")
 	private String semestreAdmissao;
 	
-	@NotBlank(message = "aluno-9")
-	private String sexo;
-	
 	@NotNull(message =  "aluno-10")
 	private AlunoStatus status;
+	
+	@Embedded
+	private DadosPessoais dadosPessoais;
 	
 	@Embedded
 	private Telefone telefone;

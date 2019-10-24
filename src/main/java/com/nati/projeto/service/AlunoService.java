@@ -30,12 +30,12 @@ public class AlunoService {
 	}
 
 	public Aluno findByCpf(String cpf) {
-		Aluno aluno = repository.findByCpf(cpf);
+		Aluno aluno = repository.findByDadosPessoaisCpf(cpf);
 		return aluno;
 	}
 
 	public Aluno findByEmail(String email) {
-		Aluno aluno = repository.findByEmail(email);
+		Aluno aluno = repository.findByDadosPessoaisEmail(email);
 		return aluno;
 	}
 
@@ -63,6 +63,6 @@ public class AlunoService {
 	}
 
 	public Aluno findByMatricula(String matricula) {
-		return repository.findByMatricula(matricula);
+		return repository.findByDadosPessoaisMatricula(matricula);
 	}
 }
