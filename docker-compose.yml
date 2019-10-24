@@ -1,0 +1,22 @@
+version: "3.3"
+services:
+  data-base:
+    image: postgres:12.0-alpine
+    container_name: projetonatidb
+    environment:
+      POSTGRES_USER: projetostore
+      POSTGRES_PASSWORD: projetostore
+      POSTGRES_DB: projetostore
+    volumes:
+      - ./api/db/data:/var/lib/postgres
+    restart: always
+    ports: 
+      - "5433:5432"
+  api:
+    build: "./"
+    container_name: projeto-nati
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - data-base
