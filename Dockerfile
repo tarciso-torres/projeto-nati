@@ -1,10 +1,25 @@
-FROM openjdk:8u171-jdk-alpine3.8
-LABEL maintainer="tarcisoftorres@gmail.com"
+FROM openjdk:8-jdk-alpine as build
 
-ENV LANG C.UTF-8
+WORKDIR /app
 
-RUN apk add --update bash
+COPY mvnw .
+COPY .mvn .mvn
 
-ADD target/*.jar /app/app.jar
+COPY pom.xml .
 
-CMD java -jar /app/app.jar
+RUN ./mvnw dependency:go-offline -B
+
+COPY src src
+
+RUN ./mvnw package -DskipTests
+RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
+ 
+FROM openjdk:8-jre-alpine
+
+ARG DEPENDENCY=/app/target/dependency
+
+COPY --from=build ${DEPENDENCY}/BOOT-INF/lib /app/lib
+COPY --from=build ${DEPENDENCY}/META-INF /app/META-INF
+COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
+
+ENTRYPOINT ["java","-cp","app:app/lib/*","com.nati.projeto.ProjetoNatiApplication"]
