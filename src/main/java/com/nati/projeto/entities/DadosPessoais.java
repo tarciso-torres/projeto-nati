@@ -8,15 +8,19 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.br.CPF;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Embeddable
 @Getter @Setter
+@NoArgsConstructor @AllArgsConstructor 
 public class DadosPessoais {
 	
 	@NotBlank(message = "dadosPessoais-1")
 	private String nome;
+	
 	private String matricula;
 	
 	@Email(message = "dadosPessoais-2") @NotBlank(message = "dadosPessoais-3")
