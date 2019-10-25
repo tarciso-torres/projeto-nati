@@ -11,7 +11,7 @@ services:
       - db-data:/var/lib/postgres
     restart: always
     ports: 
-      - "5433:5432"
+      - "5432:5432"
     networks:
       - backend
   api:
@@ -23,7 +23,7 @@ services:
     depends_on:
       - db
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5433/projetostore
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/projetostore
       SPRING_DATASOURCE_USERNAME: projetostore
       SPRING_DATASOURCE_PASSWORD: projetostore
     networks: 
