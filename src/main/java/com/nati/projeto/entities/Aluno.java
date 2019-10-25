@@ -4,12 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.br.CPF;
 
 import com.nati.projeto.entities.enums.AlunoStatus;
 
@@ -24,11 +20,11 @@ import lombok.Setter;
 @NoArgsConstructor @AllArgsConstructor
 public class Aluno extends EntidadeComUUID{
 	
-	@NotBlank(message = "aluno-8")
+	@NotBlank(message = "aluno-1")
 	@Column(name = "semestreadmissao")
 	private String semestreAdmissao;
 	
-	@NotNull(message =  "aluno-10")
+	@NotNull(message =  "aluno-2")
 	private AlunoStatus status;
 	
 	@Embedded
