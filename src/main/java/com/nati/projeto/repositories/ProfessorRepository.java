@@ -10,10 +10,10 @@ import com.nati.projeto.entities.Professor;
 @Repository
 public interface ProfessorRepository extends JpaRepository<Professor, UUID>{
 	
-	Professor findByMatricula(String name);
+	Professor findByDadosPessoaisMatricula(String name);
 	
-	Professor findByCpf(String cpf);
+	Professor findByDadosPessoaisCpf(String cpf);
 	
-	Professor findByEmail(String email);
+	Professor findByDadosPessoaisEmail(String email);
 
 }
