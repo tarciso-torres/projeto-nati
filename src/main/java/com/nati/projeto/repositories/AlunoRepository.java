@@ -14,6 +14,6 @@ public interface AlunoRepository extends JpaRepository<Aluno, UUID>{
 	
 	Aluno findByDadosPessoaisCpf(String cpf);
 	
-	Aluno findByDadosPessoaisEmail(String email);
+	Aluno findByUsuarioEmail(String email);
 
 }

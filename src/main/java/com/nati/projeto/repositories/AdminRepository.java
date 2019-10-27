@@ -14,6 +14,6 @@ public interface AdminRepository extends JpaRepository<Admin, UUID>{
 	
 	Admin findByDadosPessoaisCpf(String cpf);
 	
-	Admin findByDadosPessoaisEmail(String email);
+	Admin findByUsuarioEmail(String email);
 
 }

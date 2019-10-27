@@ -35,7 +35,7 @@ public class ProfessorService {
 	}
 
 	public Professor findByEmail(String email) {
-		Professor professor = repository.findByDadosPessoaisEmail(email);
+		Professor professor = repository.findByUsuarioEmail(email);
 		return professor;
 	}
 

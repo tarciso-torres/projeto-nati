@@ -35,7 +35,7 @@ public class AdminResource {
 	}
 	
 	@GetMapping("/findByEmail/{email}")
-	public ResponseEntity<Admin> findByNome(@PathVariable String email){
+	public ResponseEntity<Admin> findByEmail(@PathVariable String email){
 		Admin admin = adminService.findByEmail(email);
 		return ResponseEntity.ok().body(admin);
 	}

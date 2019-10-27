@@ -35,7 +35,7 @@ public class ProfessorResource {
 	}
 	
 	@GetMapping("/findByEmail/{email}")
-	public ResponseEntity<Professor> findByNome(@PathVariable String email){
+	public ResponseEntity<Professor> findByUsuario(@PathVariable String email){
 		Professor professor = professorService.findByEmail(email);
 		return ResponseEntity.ok().body(professor);
 	}
