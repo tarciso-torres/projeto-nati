@@ -14,6 +14,6 @@ public interface ProfessorRepository extends JpaRepository<Professor, UUID>{
 	
 	Professor findByDadosPessoaisCpf(String cpf);
 	
-	Professor findByDadosPessoaisEmail(String email);
+	Professor findByUsuarioEmail(String email);
 
 }

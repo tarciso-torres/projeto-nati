@@ -35,7 +35,7 @@ public class AdminService {
 	}
 
 	public Admin findByEmail(String email) {
-		Admin admin = repository.findByDadosPessoaisEmail(email);
+		Admin admin = repository.findByUsuarioEmail(email);
 		return admin;
 	}
 

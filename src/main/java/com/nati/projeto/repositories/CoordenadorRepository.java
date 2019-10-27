@@ -14,6 +14,6 @@ public interface CoordenadorRepository extends JpaRepository<Coordenador, UUID>{
 	
 	Coordenador findByDadosPessoaisCpf(String cpf);
 	
-	Coordenador findByDadosPessoaisEmail(String email);
+	Coordenador findByUsuarioEmail(String email);
 
 }

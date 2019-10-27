@@ -35,7 +35,7 @@ public class AlunoService {
 	}
 
 	public Aluno findByEmail(String email) {
-		Aluno aluno = repository.findByDadosPessoaisEmail(email);
+		Aluno aluno = repository.findByUsuarioEmail(email);
 		return aluno;
 	}
 

@@ -10,6 +10,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import com.nati.projeto.entities.Coordenador;
+import com.nati.projeto.entities.Usuario;
 import com.nati.projeto.repositories.CoordenadorRepository;
 
 @Service
@@ -35,12 +36,11 @@ public class CoordenadorService {
 	}
 
 	public Coordenador findByEmail(String email) {
-		Coordenador coordenador = repository.findByDadosPessoaisEmail(email);
+		Coordenador coordenador = repository.findByUsuarioEmail(email);
 		return coordenador;
 	}
 
-	public Coordenador save(Coordenador entity) {
-
+	public Coordenador save(Coordenador entity, Usuario user) {
 		return repository.save(entity);
 	}
 

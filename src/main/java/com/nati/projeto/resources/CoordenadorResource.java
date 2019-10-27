@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nati.projeto.entities.Coordenador;
+import com.nati.projeto.entities.Usuario;
 import com.nati.projeto.service.CoordenadorService;
 
 @RestController
@@ -59,8 +60,8 @@ public class CoordenadorResource {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Coordenador> save(@Valid @RequestBody Coordenador entity){
-		Coordenador coordenador = coordenadorService.save(entity);
+	public ResponseEntity<Coordenador> save(@Valid @RequestBody Coordenador entity, Usuario usuario){
+		Coordenador coordenador = coordenadorService.save(entity, usuario);
 		return ResponseEntity.status(HttpStatus.CREATED).body(coordenador);
 	}
 	
