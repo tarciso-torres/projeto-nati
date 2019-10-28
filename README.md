@@ -60,6 +60,7 @@ public class ProfessorResource {
 		return ResponseEntity.ok().body(professors);
 	}
    }
+
 No exemplo acima, é criado um resource com um método de listar todos os professores que graças a anotação <code>@GetMapping</code>, o método estará disponível via GET a /professores.
 
 ### Repository:
