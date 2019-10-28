@@ -13,3 +13,9 @@ FOREIGN KEY(usuario_id) REFERENCES tb_usuario(id);
 
 ALTER TABLE tb_admin ADD CONSTRAINT fk_admin_usuario
 FOREIGN KEY(usuario_id) REFERENCES tb_usuario(id);
+
+ALTER TABLE tb_aluno ADD CONSTRAINT fk_aluno_usuario
+FOREIGN KEY(usuario_id) REFERENCES tb_usuario(id);
+
+ALTER TABLE tb_professor ADD CONSTRAINT fk_professor_usuario
+FOREIGN KEY(usuario_id) REFERENCES tb_usuario(id);

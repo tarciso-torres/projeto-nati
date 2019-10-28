@@ -1,0 +1,1197 @@
+{
+	"info": {
+		"_postman_id": "5a0c6199-3fff-4645-8114-4fbf8eb2cd27",
+		"name": "Projeto Nati",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Aluno",
+			"item": [
+				{
+					"name": "Find By Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/alunos/findByEmail/sab@test.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alunos",
+								"findByEmail",
+								"sab@test.com"
+							]
+						},
+						"description": "Retorna um aluno, passando o seu email"
+					},
+					"response": []
+				},
+				{
+					"name": "Find By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/alunos/db29ae16-ce72-4e11-8732-799b81476cd3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alunos",
+								"db29ae16-ce72-4e11-8732-799b81476cd3"
+							]
+						},
+						"description": "Retorna um aluno, passando o seu uuid."
+					},
+					"response": []
+				},
+				{
+					"name": "Find All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/alunos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alunos"
+							]
+						},
+						"description": "Retorna uma lista de alunos."
+					},
+					"response": []
+				},
+				{
+					"name": "Find By CPF",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/alunos/findByCpf/12448299005",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alunos",
+								"findByCpf",
+								"12448299005"
+							]
+						},
+						"description": "Retorna um aluno, passando o seu CPF."
+					},
+					"response": [
+						{
+							"name": "Find By Nome",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/alunos/findByEmail/sab@test.com",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"alunos",
+										"findByEmail",
+										"sab@test.com"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Find By Matricula",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/alunos/findByMatricula/2134213",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alunos",
+								"findByMatricula",
+								"2134213"
+							]
+						},
+						"description": "Retorna um aluno, passando o sua matricula"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"semestreAdmissao\": \"2\",\n    \"status\": \"CURSANDO\",\n    \"dadosPessoais\": {\n        \"nome\": \"JLucas\",\n        \"matricula\": \"2134213\",\n        \"cpf\": \"12448299005\",\n        \"anoAdmissao\": \"2018\",\n        \"sexo\": \"F\"\n    },\n    \"usuario\": {\n        \"email\": \"lu@test.com\",\n        \"senha\": \"123\"\n    },\n    \"telefone\": {\n        \"celNumero\": \"12345678912\"\n    },\n    \"endereco\": {\n        \"logradouro\": \"Rua dos coxinhas\",\n        \"numero\": \"32\",\n        \"complemento\": \"Perto dos carniças\",\n        \"bairro\": \"Zé Boi\",\n        \"cep\": \"12345678\",\n        \"cidade\": \"Fortaleza\",\n        \"estado\": \"CE\"\n    }\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/alunos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alunos"
+							]
+						},
+						"description": "Cria um novo aluno"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Sabrina\",\n    \"email\": \"sab@test.com\",\n    \"matricula\": \"2134213\",\n    \"cpf\": \"67256104391\",\n    \"anoAdmissao\": \"2018\",\n    \"semestreAdmissao\": \"2\",\n    \"sexo\": \"F\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/alunos/db29ae16-ce72-4e11-8732-799b81476cd3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alunos",
+								"db29ae16-ce72-4e11-8732-799b81476cd3"
+							]
+						},
+						"description": "Apaga um aluno passando o seu id."
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"semestreAdmissao\": \"2\",\n    \"status\": \"CURSANDO\",\n\t\"dadosPessoais\": {\n\t\"nome\": \"Lucas\",\n    \"matricula\": \"2134213\",\n    \"cpf\": \"12448299005\",\n    \"anoAdmissao\": \"2018\",\n    \"sexo\": \"M\"\n\t},\n\t\"usuario\": {\n\t\t\"email\":\"lcp@test.com\",\n\t\t\"senha\":\"123\"\n\t},\n    \"telefone\":{\n         \"celNumero\": \"12345678912\"\n    },\n    \"endereco\": {\n    \t\"logradouro\": \"Rua dos coxinhas\",\n    \t\"numero\": \"32\",\n    \t\"complemento\": \"Perto dos carniças\",\n    \t\"bairro\": \"Zé Boi\",\n    \t\"cep\":\"12345678\",\n    \t\"cidade\": \"Fortaleza\",\n    \t\"estado\": \"CE\"\n    \t\n    }\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/alunos/a5fc54d3-baef-47c6-a077-77d60e4bb6a2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alunos",
+								"a5fc54d3-baef-47c6-a077-77d60e4bb6a2"
+							]
+						},
+						"description": "Apaga um aluno passando o seu id."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Coordenador",
+			"item": [
+				{
+					"name": "Find By Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/coordenadores/findByEmail/sab@test.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"coordenadores",
+								"findByEmail",
+								"sab@test.com"
+							]
+						},
+						"description": "Retorna um coordenador, passando o seu email"
+					},
+					"response": []
+				},
+				{
+					"name": "Find By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/coordenadores/12667164-2e1d-4613-9dfd-74e43760526d",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"coordenadores",
+								"12667164-2e1d-4613-9dfd-74e43760526d"
+							]
+						},
+						"description": "Retorna um coordenador\t, passando o seu uuid."
+					},
+					"response": []
+				},
+				{
+					"name": "Find All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/coordenadores/12667164-2e1d-4613-9dfd-74e43760526d",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"coordenadores",
+								"12667164-2e1d-4613-9dfd-74e43760526d"
+							]
+						},
+						"description": "Retorna uma lista de coordenadores."
+					},
+					"response": []
+				},
+				{
+					"name": "Find By CPF",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/coordenadores/findByCpf/12448299005",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"coordenadores",
+								"findByCpf",
+								"12448299005"
+							]
+						},
+						"description": "Retorna um coordenador, passando o seu CPF."
+					},
+					"response": []
+				},
+				{
+					"name": "Find By Matricula",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/coordenadores/findByCpf/67256104391",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"coordenadores",
+								"findByCpf",
+								"67256104391"
+							]
+						},
+						"description": "Retorna um coordenador, passando o sua matricula"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dadosPessoais\": {\n\t\"nome\": \"JLucas\",\n    \"matricula\": \"2134213\",\n    \"cpf\": \"12448299005\",\n    \"anoAdmissao\": \"2018\",\n    \"semestreAdmissao\": \"2\",\n    \"sexo\": \"F\"\t\n\t},\n\t\"usuario\": {\n\t\t\"email\":\"testlc@test.com\",\n\t\t\"senha\":\"123\"\n\t},\n    \"telefone\":{\n         \"celNumero\": \"12345678912\"\n    },\n    \"endereco\": {\n    \t\"logradouro\": \"Rua dos coxinhas\",\n    \t\"numero\": \"32\",\n    \t\"complemento\": \"Perto dos carniças\",\n    \t\"bairro\": \"Zé Boi\",\n    \t\"cep\":\"12345678\",\n    \t\"cidade\": \"Fortaleza\",\n    \t\"estado\": \"CE\"\n    \t\n    }\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/coordenadores",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"coordenadores"
+							]
+						},
+						"description": "Cria um novo coordenador"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Sabrina\",\n    \"email\": \"sab@test.com\",\n    \"matricula\": \"2134213\",\n    \"cpf\": \"67256104391\",\n    \"anoAdmissao\": \"2018\",\n    \"semestreAdmissao\": \"2\",\n    \"sexo\": \"F\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/coordenadores/2d0bcdeb-71b0-4fa4-9b1e-64380302a22b",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"coordenadores",
+								"2d0bcdeb-71b0-4fa4-9b1e-64380302a22b"
+							]
+						},
+						"description": "Apaga um coordenador passando o seu id."
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Sabrina Morais\",\n    \"email\": \"sabrina@test.com\",\n    \"matricula\": \"2134213\",\n    \"cpf\": \"67256104391\",\n    \"anoAdmissao\": \"2018\",\n    \"semestreAdmissao\": \"2\",\n    \"sexo\": \"F\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/alunos/7ccf61d1-892d-49ed-af2c-901828fd3ce1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alunos",
+								"7ccf61d1-892d-49ed-af2c-901828fd3ce1"
+							]
+						},
+						"description": "Apaga um coordenador passando o seu id."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Curso",
+			"item": [
+				{
+					"name": "Find By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/cursos/56522f3c-1d55-4d9a-b440-66034df6afbf",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cursos",
+								"56522f3c-1d55-4d9a-b440-66034df6afbf"
+							]
+						},
+						"description": "Retorna um curso, passando o seu uuid."
+					},
+					"response": []
+				},
+				{
+					"name": "Find All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/cursos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cursos"
+							]
+						},
+						"description": "Retorna uma lista de cursos."
+					},
+					"response": []
+				},
+				{
+					"name": "Find By Nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/cursos/findByNome/Direito",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cursos",
+								"findByNome",
+								"Direito"
+							]
+						},
+						"description": "Retorna um curso, passando o seu CPF."
+					},
+					"response": [
+						{
+							"name": "Find By Nome",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/alunos/findByEmail/sab@test.com",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"alunos",
+										"findByEmail",
+										"sab@test.com"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Direito\",\n    \"descricao\": \"Curso de Direito voltado para endireitar as pessoas\",\n    \"areaConhecimento\": \"DIREITO\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/cursos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cursos"
+							]
+						},
+						"description": "Cria um novo curso"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Direito\",\n    \"descricao\": \"Curso de Direito voltado para endireitar as pessoas coxinhas\",\n    \"areaConhecimento\": \"DIREITO\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/cursos/56522f3c-1d55-4d9a-b440-66034df6afbf",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cursos",
+								"56522f3c-1d55-4d9a-b440-66034df6afbf"
+							]
+						},
+						"description": "Apaga um curso passando o seu id."
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Direito\",\n    \"descricao\": \"Curso de Direito voltado para endireitar as pessoas coxinhas\",\n    \"areaConhecimento\": \"DIREITO\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/cursos/56522f3c-1d55-4d9a-b440-66034df6afbf",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cursos",
+								"56522f3c-1d55-4d9a-b440-66034df6afbf"
+							]
+						},
+						"description": "Apaga um curso passando o seu id."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Cadeira",
+			"item": [
+				{
+					"name": "Find By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/cadeiras/962aba96-0c24-4ef4-b494-acc723de2ac3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cadeiras",
+								"962aba96-0c24-4ef4-b494-acc723de2ac3"
+							]
+						},
+						"description": "Retorna um cadeira, passando o seu uuid."
+					},
+					"response": []
+				},
+				{
+					"name": "Find All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/cadeiras",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cadeiras"
+							]
+						},
+						"description": "Retorna uma lista de alunos."
+					},
+					"response": []
+				},
+				{
+					"name": "Find By Nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/cadeiras/findByNome/Logica",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cadeiras",
+								"findByNome",
+								"Logica"
+							]
+						},
+						"description": "Retorna um cadeira, passando o seu CPF."
+					},
+					"response": [
+						{
+							"name": "Find By Nome",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/alunos/findByEmail/sab@test.com",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"alunos",
+										"findByEmail",
+										"sab@test.com"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Logica\",\n    \"creditos\": 16,\n    \"ementa\": \"Ementa da cadeira de Logica\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/cadeiras",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cadeiras"
+							]
+						},
+						"description": "Cria um novo cadeira"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Direito\",\n    \"descricao\": \"Curso de Direito voltado para endireitar as pessoas coxinhas\",\n    \"areaConhecimento\": \"DIREITO\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/cadeiras/b522e4ce-ad54-48b8-bd14-1b176977f24f",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cadeiras",
+								"b522e4ce-ad54-48b8-bd14-1b176977f24f"
+							]
+						},
+						"description": "Apaga um cadeira passando o seu id."
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"banco de dados\",\n    \"creditos\": 16,\n    \"ementa\": \"Ementa da cadeira de banco de dados 23\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/cadeiras/b522e4ce-ad54-48b8-bd14-1b176977f24f",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cadeiras",
+								"b522e4ce-ad54-48b8-bd14-1b176977f24f"
+							]
+						},
+						"description": "Apaga um cadeira passando o seu id."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Professor",
+			"item": [
+				{
+					"name": "Find By Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/professores/findByEmail/tar@test.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"professores",
+								"findByEmail",
+								"tar@test.com"
+							]
+						},
+						"description": "Retorna um professor, passando o seu email"
+					},
+					"response": []
+				},
+				{
+					"name": "Find By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/professores/eb5c3135-0eb6-4d97-9400-69cd9ca031a5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"professores",
+								"eb5c3135-0eb6-4d97-9400-69cd9ca031a5"
+							]
+						},
+						"description": "Retorna um aluno, passando o seu uuid."
+					},
+					"response": []
+				},
+				{
+					"name": "Find All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/professores/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"professores",
+								""
+							]
+						},
+						"description": "Retorna uma lista de professores."
+					},
+					"response": []
+				},
+				{
+					"name": "Find By CPF",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/professores/findByCpf/12448299005",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"professores",
+								"findByCpf",
+								"12448299005"
+							]
+						},
+						"description": "Retorna um professor, passando o seu CPF."
+					},
+					"response": []
+				},
+				{
+					"name": "Find By Matricula",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/alunos/findByMatricula/67256104391",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alunos",
+								"findByMatricula",
+								"67256104391"
+							]
+						},
+						"description": "Retorna um professor, passando o sua matricula"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dadosPessoais\": {\n\t\"nome\": \"Pedro\",\n    \"matricula\": \"2134213\",\n    \"cpf\": \"12448299005\",\n    \"anoAdmissao\": \"2018\",\n    \"semestreAdmissao\": \"2\",\n    \"sexo\": \"F\"\t\n\t},\n\t\"usuario\": {\n\t\t\"email\":\"ped@test.com\",\n\t\t\"senha\":\"123\"\n\t},\n    \"telefone\":{\n         \"celNumero\": \"12345678912\"\n    },\n    \"endereco\": {\n    \t\"logradouro\": \"Rua dos coxinhas\",\n    \t\"numero\": \"32\",\n    \t\"complemento\": \"Perto dos carniças\",\n    \t\"bairro\": \"Zé Boi\",\n    \t\"cep\":\"12345678\",\n    \t\"cidade\": \"Fortaleza\",\n    \t\"estado\": \"CE\"\n    \t\n    }\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/professores",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"professores"
+							]
+						},
+						"description": "Cria um novo professor."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/professores/b3020baf-bf3f-4408-ae61-8d02ab41cfa3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"professores",
+								"b3020baf-bf3f-4408-ae61-8d02ab41cfa3"
+							]
+						},
+						"description": "Apaga um professor passando o seu id."
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dadosPessoais\": {\n\t\"nome\": \"Pedro\",\n    \"matricula\": \"2134213\",\n    \"cpf\": \"12448299005\",\n    \"anoAdmissao\": \"2018\",\n    \"semestreAdmissao\": \"2\",\n    \"sexo\": \"M\"\t\n\t},\n\t\"usuario\": {\n\t\t\"email\":\"pedro@test.com\",\n\t\t\"senha\":\"123\"\n\t},\n    \"telefone\":{\n         \"celNumero\": \"12345678912\"\n    },\n    \"endereco\": {\n    \t\"logradouro\": \"Rua dos coxinhas\",\n    \t\"numero\": \"32\",\n    \t\"complemento\": \"Perto dos carniças\",\n    \t\"bairro\": \"Zé Boi\",\n    \t\"cep\":\"12345678\",\n    \t\"cidade\": \"Fortaleza\",\n    \t\"estado\": \"CE\"\n    \t\n    }\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/professores/b808d8ca-615e-4c25-a8ff-131d8b35e165",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"professores",
+								"b808d8ca-615e-4c25-a8ff-131d8b35e165"
+							]
+						},
+						"description": "Apaga um professor passando o seu id."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Find By Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/admins/findByEmail/lcd@nati.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admins",
+								"findByEmail",
+								"lcd@nati.com"
+							]
+						},
+						"description": "Retorna um admin, passando o seu email"
+					},
+					"response": []
+				},
+				{
+					"name": "Find By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/admins/747e6d7d-def7-436c-aec6-ec370304a525",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admins",
+								"747e6d7d-def7-436c-aec6-ec370304a525"
+							]
+						},
+						"description": "Retorna um aluno, passando o seu uuid."
+					},
+					"response": []
+				},
+				{
+					"name": "Find All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/admins",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admins"
+							]
+						},
+						"description": "Retorna uma lista de professores."
+					},
+					"response": []
+				},
+				{
+					"name": "Find By CPF",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/admins/findByCpf/12448299005",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admins",
+								"findByCpf",
+								"12448299005"
+							]
+						},
+						"description": "Retorna um admin, passando o seu CPF."
+					},
+					"response": []
+				},
+				{
+					"name": "Find By Matricula",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/admins/findByMatricula/2134213",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admins",
+								"findByMatricula",
+								"2134213"
+							]
+						},
+						"description": "Retorna um admin, passando o sua matricula"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dadosPessoais\": {\n\t\"nome\": \"Mateus\",\n    \"matricula\": \"2134213\",\n    \"cpf\": \"12448299005\",\n    \"anoAdmissao\": \"2018\",\n    \"semestreAdmissao\": \"2\",\n    \"sexo\": \"F\"\t\n\t},\n\t\"usuario\": {\n\t\t\"email\":\"mat@test.com\",\n\t\t\"senha\":\"123\"\n\t},\n    \"telefone\":{\n         \"celNumero\": \"12345678912\"\n    },\n    \"endereco\": {\n    \t\"logradouro\": \"Rua dos coxinhas\",\n    \t\"numero\": \"32\",\n    \t\"complemento\": \"Perto dos carniças\",\n    \t\"bairro\": \"Zé Boi\",\n    \t\"cep\":\"12345678\",\n    \t\"cidade\": \"Fortaleza\",\n    \t\"estado\": \"CE\"\n    \t\n    }\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/admins",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admins"
+							]
+						},
+						"description": "Cria um novo admin."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/admins/99f0335e-fe34-4efb-9c76-edb453e17c46",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admins",
+								"99f0335e-fe34-4efb-9c76-edb453e17c46"
+							]
+						},
+						"description": "Apaga um admin passando o seu id."
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dadosPessoais\": {\n\t\"nome\": \"João\",\n    \"matricula\": \"2134213\",\n    \"cpf\": \"12448299005\",\n    \"anoAdmissao\": \"2018\",\n    \"semestreAdmissao\": \"2\",\n    \"sexo\": \"M\"\t\n\t},\n\t\"usuario\": {\n\t\t\"email\":\"joao@test.com\",\n\t\t\"senha\":\"123\"\n\t},\n    \"telefone\":{\n         \"celNumero\": \"12345678912\"\n    },\n    \"endereco\": {\n    \t\"logradouro\": \"Rua dos coxinhas\",\n    \t\"numero\": \"32\",\n    \t\"complemento\": \"Perto dos carniças\",\n    \t\"bairro\": \"Zé Boi\",\n    \t\"cep\":\"12345678\",\n    \t\"cidade\": \"Fortaleza\",\n    \t\"estado\": \"CE\"\n    \t\n    }\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/admins/99f0335e-fe34-4efb-9c76-edb453e17c46",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admins",
+								"99f0335e-fe34-4efb-9c76-edb453e17c46"
+							]
+						},
+						"description": "Apaga um admin passando o seu id."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	]
+}
