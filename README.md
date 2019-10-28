@@ -47,19 +47,19 @@ No momento todos os endpoints estão acessíveis via request, não há separaç�
 
 ### Resource:
       
-@RestController
-@RequestMapping(value = "/professores")
-public class ProfessorResource {
+    @RestController
+    @RequestMapping(value = "/professores")
+    public class ProfessorResource {
 
-	@Autowired
-	private ProfessorService professorService;
-	
-	@GetMapping
-	public ResponseEntity<List<Professor>> findAll(){
-		List<Professor> professors = professorService.findAll();
-		return ResponseEntity.ok().body(professors);
-	}
-   }
+	    @Autowired
+	    private ProfessorService professorService;
+	    
+	    @GetMapping
+	    public ResponseEntity<List<Professor>> findAll(){
+		    List<Professor> professors = professorService.findAll();
+		    return ResponseEntity.ok().body(professors);
+	    }
+    }
 
 No exemplo acima, é criado um resource com um método de listar todos os professores que graças a anotação <code>@GetMapping</code>, o método estará disponível via GET a /professores.
 
