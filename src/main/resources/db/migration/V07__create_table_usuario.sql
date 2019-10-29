@@ -1,7 +1,7 @@
 CREATE TABLE tb_usuario (
     id                      UUID NOT NULL,
 	email                   VARCHAR(30) NOT NULL,
-    senha                   VARCHAR(50) NOT NULL
+    senha                   VARCHAR(200) NOT NULL
 );
 
 ALTER TABLE tb_usuario ADD constraint pk_usuario_id PRIMARY KEY(id);
