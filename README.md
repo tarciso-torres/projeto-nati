@@ -1,6 +1,6 @@
 ## Projeto Nati
 
-Consiste em um sistema responsável por lidar com a vizualização de Matrizes Curriculares, assim como gerenciar usuários(Aluno, Professor, Coordenador e Admin), cursos, semestres e disciplinas. 
+Consiste em um sistema responsável por lidar com a visualização de Matrizes Curriculares, assim como gerenciar usuários(Aluno, Professor, Coordenador e Admin), cursos, semestres e disciplinas. 
 
 ## Decisões de Projeto
 
